@@ -16,4 +16,14 @@ def Choose_Option():
         Choose_Option()
     return user_choice
 
- 
+ def Computer_Option():
+    comp_choice = random.randint(1, 3)
+    if comp_choice == 1:
+        comp_choice = "r"
+    elif comp_choice == 2:
+        comp_choice = "p"
+    else:
+        comp_choice = "s"
+    return comp_choice
+
+
