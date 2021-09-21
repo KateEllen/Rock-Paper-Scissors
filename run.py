@@ -26,4 +26,58 @@ def Choose_Option():
         comp_choice = "s"
     return comp_choice
 
+def Computer_Option():
+    comp_choice = random.randint(1, 3)
+    if comp_choice == 1:
+        comp_choice = "r"
+    elif comp_choice == 2:
+        comp_choice = "p"
+    else:
+        comp_choice = "s"
+    return comp_choice
+
+while True: 
+    print("")
+    user_choice = Choose_Option ()
+    comp_choice = Computer_Option ()
+    print("")
+    
+    if user_choice == "r":
+        if comp_choice == "r":
+            print("You chose rock. The computer chose rock too. Congrats, you tied.")
+
+        elif comp_choice == "p":
+            print("You chose rock. The computer chose paper. Oh no, you lose.")
+            comp_wins += 1
+
+        elif comp_choice == "s":
+            print("You chose rock. The computer chose scissors. Woo hoo!! You win!")
+            player_wins += 1
+
+        elif user_choice == "p":
+        if comp_choice == "r":
+            print("You chose paper. The computer chose rock. Woo hoo!! You win!.")
+            player_wins += 1
+        
+        elif comp_choice == "p":
+            print("You chose paper. The computer chose paper too. Congrats, you tied.")
+            
+            
+        elif comp_choice == "s":
+            print("You chose paper. The computer chose scissors. Oh no, you lose.")
+            comp_wins += 1
+
+        elif user_choice == "s":
+        if comp_choice == "r":
+            print("You chose scissors. The computer chose rock. Oh no, you lose.")
+            comp_wins += 1
+        
+        elif comp_choice == "p":
+            print("You chose scissors. The computer chose paper. Woo hoo!! You win!.")
+            player_wins += 1
+            
+        elif comp_choice == "s":
+            print("You chose scissors. The computer chose scissors too. Congrats, you tied.")
+
+
 
