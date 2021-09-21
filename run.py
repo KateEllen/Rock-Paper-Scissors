@@ -78,6 +78,19 @@ while True:
             
         elif comp_choice == "s":
             print("You chose scissors. The computer chose scissors too. Congrats, you tied.")
+            
+    print("")
+    print("Player wins: " + str(player_wins))
+    print("Computer wins: " + str(comp_wins))
+    print("")
+
+user_choice = input("Do you want to play again? (y/n)")
+    if user_choice in ["Y", "y", "yes", "Yes"]:
+        pass
+    elif user_choice in ["N", "n", "no", "No"]:
+        break
+    else:
+        break
 
 
 
