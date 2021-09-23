@@ -16,16 +16,6 @@ def Choose_Option():
         Choose_Option()
     return user_choice
 
- def Computer_Option():
-    comp_choice = random.randint(1, 3)
-    if comp_choice == 1:
-        comp_choice = "r"
-    elif comp_choice == 2:
-        comp_choice = "p"
-    else:
-        comp_choice = "s"
-    return comp_choice
-
 def Computer_Option():
     comp_choice = random.randint(1, 3)
     if comp_choice == 1:
@@ -54,7 +44,8 @@ while True:
             print("You chose rock. The computer chose scissors. Woo hoo!! You win!")
             player_wins += 1
 
-        elif user_choice == "p":
+    elif user_choice == "p":
+        
         if comp_choice == "r":
             print("You chose paper. The computer chose rock. Woo hoo!! You win!.")
             player_wins += 1
@@ -67,7 +58,8 @@ while True:
             print("You chose paper. The computer chose scissors. Oh no, you lose.")
             comp_wins += 1
 
-        elif user_choice == "s":
+    elif user_choice == "s":
+        
         if comp_choice == "r":
             print("You chose scissors. The computer chose rock. Oh no, you lose.")
             comp_wins += 1
@@ -84,10 +76,15 @@ while True:
     print("Computer wins: " + str(comp_wins))
     print("")
 
-user_choice = input("Do you want to play again? (y/n)")
+    user_choice = input("Do you want to play again? (y/n)")
     if user_choice in ["Y", "y", "yes", "Yes"]:
         pass
     elif user_choice in ["N", "n", "no", "No"]:
+        print("")
+        print("Final Score")
+        print("Player wins: " + str(player_wins))
+        print("Computer wins: " + str(comp_wins))
+        print("")
         break
     else:
         break
