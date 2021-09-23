@@ -5,14 +5,14 @@ player_wins = 0
 
 def Start_Option():
     user_choice = input("Type 'Start' To Begin or Type 'Help' For The Rules.\n")
-    if user_choice in ["Help", "help", "h", "H"]:
+    if user_choice.lower().strip() in ["help", "h"]:
         print("game rules\n")
         print("lorem ipsum")
         print("lorem ipsum")
         print("lorem ipsum\n")
         Start_Option()
 # View most addicted player 
-    elif user_choice in ["Start", "start", "s", "S", "Y", "y", "yes", "Yes"]:
+    elif user_choice.lower().strip() in ["start", "s", "y", "yes"]:
         
         return True
     else:
@@ -21,11 +21,11 @@ def Start_Option():
 
 def Choose_Option():
     user_choice = input("Choose Rock, Paper or Scissors: ")        
-    if user_choice in ["Rock", "rock", "r", "R"]:
+    if user_choice.lower().strip() in ["rock", "r"]:
         user_choice = "r"
-    elif user_choice in ["Paper", "paper", "p", "P"]:
+    elif user_choice.lower().strip() in ["paper", "p"]:
         user_choice = "p"
-    elif user_choice in ["Scissors", "scissors", "s", "S"]:
+    elif user_choice.lower().strip() in ["scissors", "s"]:
         user_choice = "s"
     else:
         print("Uh Oh, I don't think you've played this game before. Please try again.")
@@ -97,9 +97,9 @@ try:
         print("")
 
         user_choice = input("Do you want to play again? (y/n)")
-        if user_choice in ["y", "yes"]:
+        if user_choice.lower().strip() in ["y", "yes"]:
             pass
-        elif user_choice in ["N", "n", "no", "No"]:
+        elif user_choice.lower().strip() in ["n", "no"]:
             # record user playing game (add 1 to spreadsheet) create function. 
  
             print("")
