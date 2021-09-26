@@ -20,7 +20,7 @@ def Start_Option():
         Start_Option()
 
 def Choose_Option():
-    user_choice = input("Choose Rock, Paper or Scissors: ")        
+    user_choice = input("Choose Rock, Paper or Scissors: \n")        
     if user_choice.lower().strip() in ["rock", "r"]:
         user_choice = "r"
     elif user_choice.lower().strip() in ["paper", "p"]:
@@ -96,7 +96,7 @@ try:
         print("Computer wins: " + str(comp_wins))
         print("")
 
-        user_choice = input("Do you want to play again? (y/n)")
+        user_choice = input("Do you want to play again? (y/n)\n")
         if user_choice.lower().strip() in ["y", "yes"]:
             pass
         elif user_choice.lower().strip() in ["n", "no"]:
