@@ -8,11 +8,11 @@ Kate_Ellen
 ![Website Display](https://github.com/KateEllen/rock-paper-scissors/blob/main/assets/images/documentation/terminal-screenshot.png)
 
 
-This site is designed for people who love animals and quizzes. Test your dog knowledge while looking at cute pups, or test your trivia knowledge too see how much you know about the animal kingdom, or for the real test see if you can tell the difference between an alligator or a crocodile!  
+Rock-Paper-Scissors is a simple rock, paper, scissors game. You can test yourself against the computer, while keeping track of your score. There's even a rules section, so if you've never played before now is the perfect oppertunity!  
 
 ## UX
 
-### Wireframes 
+### FlowChart 
 
 Below are the wireframes I created when first starting my project. I changed my plans a lot from the original wireframes, as I decided to go for a smoother design with more hidden items at the beginning.  
 - [Opening page](https://github.com/KateEllen/Animal-Quiz/blob/main/assets/images/documentation/main-page-wireframe.png)
@@ -33,23 +33,17 @@ I chose the below colour palette as it had a nice flow. I got my inspiration fro
 
 ### Existing Features 
 
-#### Name Collection
-- Collecting the user's name gives them a sense of inclusion when it shows on the next scrren. If a user doesn't want to add their name, it will default to Player 1. 
-![Name collection](https://github.com/KateEllen/Animal-Quiz/blob/main/assets/images/documentation/name-collection.png)
+#### Name Input
 
-#### Rules Modal
-- The rules modal tells users about the quiz and lets them know that they could play a few rounds without getting the same questions. 
-![How To](https://github.com/KateEllen/Animal-Quiz/blob/main/assets/images/documentation/how-to-button.png)
-![Modal](https://github.com/KateEllen/Animal-Quiz/blob/main/assets/images/documentation/how-to-modal.png)
 
-#### Colour changing background depending on answer
-- In order to give the user a sense if an answer is right or wrong, the background of the questions container changes to green for correct and red for incorrect.
-![Right Answer background](https://github.com/KateEllen/Animal-Quiz/blob/main/assets/images/documentation/right-answer.png)
-![Wrong Answer background](https://github.com/KateEllen/Animal-Quiz/blob/main/assets/images/documentation/wrong-answer.png)
+#### Rules 
+
+
+#### Simple Input Options
 
 #### Score tracker
-- Allows users to see how many questions they got correct vs incorrect during the quiz
-![Score Tracker](https://github.com/KateEllen/Animal-Quiz/blob/main/assets/images/documentation/score-tracker.png)
+- Allows users to see how many games they have won vs the computer. 
+![Score Tracker]()
 
 #### Restart Button
 - Allows user to start another quiz session. This button only shows up when the user has submitted an answer to the 5th question.
