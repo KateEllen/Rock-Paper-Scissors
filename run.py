@@ -6,10 +6,14 @@ player_wins = 0
 def Start_Option():
     user_choice = input("Type 'Start' To Begin or Type 'Help' For The Rules.\n")
     if user_choice.lower().strip() in ["help", "h"]:
-        print("game rules\n")
-        print("lorem ipsum")
-        print("lorem ipsum")
-        print("lorem ipsum\n")
+        print("Game Rules\n")
+        print("Enter 'R' for Rock")
+        print("Enter 'P' for Paper")
+        print("Enter 'S' for Scissors")
+        print("If preferred, you can type the full word.")
+        print("Rock beats Scissors")
+        print("Scissors beats Paper")
+        print("Paper beats Rock")
         Start_Option()
 # View most addicted player 
     elif user_choice.lower().strip() in ["start", "s", "y", "yes"]:
