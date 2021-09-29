@@ -23,49 +23,62 @@ player_wins = 0
 
 class Game:
     def __init__(self, myName):
-        self.myName = myName
+        if len(myName) > 0:
+            self.myName = myName
+        else:
+            self.myName = "Player 1"
+        self.comp_wins = 0
+        self.player_wins = 0
+        self.games_played = 0
+        self.user_choice = None
+        self.comp_choice = None
 
-    def Start_Option():
+    def main():
         print("Hello! What is your username?")
         myName = input()
         print("Hello, " + myName)
+        game = Game(myName)
         print("If this is your first time here, please check out our rules.")
-        user_choice = input(
-            "Type 'Start' To Begin or Type 'Help' For The Rules.\n")
-        if user_choice.lower().strip() in ["help", "h"]:
-            print("Game Rules\n")
-            print("Enter 'R' for Rock")
-            print("Enter 'P' for Paper")
-            print("Enter 'S' for Scissors")
-            print("If preferred, you can type the full word.")
-            print("Rock beats Scissors")
-            print("Scissors beats Paper")
-            print("Paper beats Rock")
-            Start_Option()
+        while True:
+            user_choice = input(
+                "Type 'Start' To Begin or Type 'Help' For The Rules.\n")
+            if user_choice.lower().strip() in ["help", "h"]:
+                return game.rules()
+
+                # View most addicted player
+            elif user_choice.lower().strip() in ["start", "s", "y", "yes"]:
+                return game.play()
+            else:
+                print(
+                    "Uh Oh, I don't think you've played this game before. Please try again.")
+
+    def rules(self):
+        print("Game Rules\n")
+        print("Enter 'R' for Rock")
+        print("Enter 'P' for Paper")
+        print("Enter 'S' for Scissors")
+        print("If preferred, you can type the full word.")
+        print("Rock beats Scissors")
+        print("Scissors beats Paper")
+        print("Paper beats Rock")
+        self.play()
     # View most addicted player
-        elif user_choice.lower().strip() in ["start", "s", "y", "yes"]:
 
-            return True
-        else:
-            print(
-                "Uh Oh, I don't think you've played this game before. Please try again.")
-            Start_Option()
-
-    def Choose_Option():
+    def get_user_choice(self):
         user_choice = input("Choose Rock, Paper or Scissors: \n")
         if user_choice.lower().strip() in ["rock", "r"]:
-            user_choice = "r"
+            self.user_choice = "r"
         elif user_choice.lower().strip() in ["paper", "p"]:
-            user_choice = "p"
+            self.user_choice = "p"
         elif user_choice.lower().strip() in ["scissors", "s"]:
-            user_choice = "s"
+            self.user_choice = "s"
         else:
             print(
                 "Uh Oh, I don't think you've played this game before. Please try again.")
-            Choose_Option()
+            self.get_user_choice
         return user_choice
 
-    def Computer_Option():
+    def computer_option(self):
         comp_choice = random.randint(1, 3)
         if comp_choice == 1:
             comp_choice = "r"
@@ -153,3 +166,7 @@ class Game:
     except:
         print("\nGoodbye!")
         # potentially add final score here
+        
+# if __name__ == 'main':
+#     main()
+main()
