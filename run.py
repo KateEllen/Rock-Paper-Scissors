@@ -17,7 +17,6 @@ usernames = SHEET.worksheet('usernames')
 data = usernames.get_all_values()
 
 
-
 class Game:
     def __init__(self, myName):
         if len(myName) > 0:
@@ -45,7 +44,7 @@ class Game:
 
     def get_user_choice(self):
         user_choice = input(
-            "Choose Rock, Paper or Scissors: \n \t r: rock \n \t p: paper \n \t s: scissors \n").lower().strip()
+            "Choose Rock, Paper or Scissors: \n \t r: rock \n \t p: paper \n \t s: scissors \n").lower().strip()  # noqa
         if user_choice in ["rock", "r"]:
             self.user_choice = "r"
         elif user_choice in ["paper", "p"]:
@@ -54,7 +53,7 @@ class Game:
             self.user_choice = "s"
         else:
             print(
-                "Uh Oh, I don't think you've played this game before. Please try again.")
+                "Uh Oh, I don't think you've played this game before. Please try again.")  # noqa
             self.get_user_choice
 
     def get_computer_option(self):
@@ -77,48 +76,48 @@ class Game:
         if self.user_choice == "r":
             if self.computer_option == "r":
                 print(
-                    "You chose rock. The computer chose rock too. Congrats, you tied.")
+                    "You chose rock. The computer chose rock too. Congrats, you tied.")  # noqa
 
             elif self.computer_option == "p":
-                print("You chose rock. The computer chose paper. Oh no, you lose.")
+                print("You chose rock. The computer chose paper. Oh no, you lose.")  # noqa
                 self.comp_wins += 1
 
             elif self.computer_option == "s":
                 print(
-                    "You chose rock. The computer chose scissors. Woo hoo!! You win!")
+                    "You chose rock. The computer chose scissors. Woo hoo!! You win!")  # noqa
                 self.player_wins += 1
 
         elif self.user_choice == "p":
 
             if self.computer_option == "r":
                 print(
-                    "You chose paper. The computer chose rock. Woo hoo!! You win!.")
+                    "You chose paper. The computer chose rock. Woo hoo!! You win!.")  # noqa
                 self.player_wins += 1
 
             elif self.computer_option == "p":
                 print(
-                    "You chose paper. The computer chose paper too. Congrats, you tied.")
+                    "You chose paper. The computer chose paper too. Congrats, you tied.")  # noqa
 
             elif self.computer_option == "s":
                 print(
-                    "You chose paper. The computer chose scissors. Oh no, you lose.")
+                    "You chose paper. The computer chose scissors. Oh no, you lose.")  # noqa
                 self.comp_wins += 1
 
         elif self.user_choice == "s":
 
             if self.computer_option == "r":
                 print(
-                    "You chose scissors. The computer chose rock. Oh no, you lose.")
+                    "You chose scissors. The computer chose rock. Oh no, you lose.")  # noqa
                 self.comp_wins += 1
 
             elif self.computer_option == "p":
                 print(
-                    "You chose scissors. The computer chose paper. Woo hoo!! You win!.")
+                    "You chose scissors. The computer chose paper. Woo hoo!! You win!.")  # noqa
                 self.player_wins += 1
 
             elif self.computer_option == "s":
                 print(
-                    "You chose scissors. The computer chose scissors too. Congrats, you tied.")
+                    "You chose scissors. The computer chose scissors too. Congrats, you tied.")  # noqa
 
     def new_round(self):
         self.user_choice = None
@@ -127,7 +126,7 @@ class Game:
 
     def play_again(self):
         user_choice = input(
-            "Do you want to play again? \n \t y: yes \n \t  n: no \n").lower().strip()
+            "Do you want to play again? \n \t y: yes \n \t  n: no \n").lower().strip()  # noqa
         if user_choice in ["y", "yes"]:
             self.new_round()
         elif user_choice in ["n", "no"]:
@@ -157,7 +156,7 @@ def main():
     print("If this is your first time here, please check out our rules.")
     while True:
         user_choice = input(
-            "Type 'Start' To Begin or Type 'Help' For The Rules.\n \t s: start \n \t h: help\n").lower().strip()
+            "Type 'Start' To Begin or Type 'Help' For The Rules.\n \t s: start \n \t h: help\n").lower().strip()  # noqa
         if user_choice in ["help", "h"]:
             return game.rules()
 
@@ -166,7 +165,7 @@ def main():
             return game.play()
         else:
             print(
-                "Uh Oh, I don't think you've played this game before. Please try again.")
+                "Uh Oh, I don't think you've played this game before. Please try again.")  # noqa
 
 
 # if __name__ == 'main':
