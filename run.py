@@ -15,10 +15,7 @@ SHEET = GSPREAD_CLIENT.open('rock_paper_scissors')
 
 usernames = SHEET.worksheet('usernames')
 data = usernames.get_all_values()
-print(data)
 
-comp_wins = 0
-player_wins = 0
 
 
 class Game:
@@ -31,26 +28,7 @@ class Game:
         self.player_wins = 0
         self.games_played = 0
         self.user_choice = None
-        self.comp_choice = None
-
-    def main():
-        print("Hello! What is your username?")
-        myName = input()
-        print("Hello, " + myName)
-        game = Game(myName)
-        print("If this is your first time here, please check out our rules.")
-        while True:
-            user_choice = input(
-                "Type 'Start' To Begin or Type 'Help' For The Rules.\n")
-            if user_choice.lower().strip() in ["help", "h"]:
-                return game.rules()
-
-                # View most addicted player
-            elif user_choice.lower().strip() in ["start", "s", "y", "yes"]:
-                return game.play()
-            else:
-                print(
-                    "Uh Oh, I don't think you've played this game before. Please try again.")
+        self.computer_option = None
 
     def rules(self):
         print("Game Rules\n")
@@ -61,112 +39,136 @@ class Game:
         print("Rock beats Scissors")
         print("Scissors beats Paper")
         print("Paper beats Rock")
+        print("Pick Rock, paper or scissors")
         self.play()
     # View most addicted player
 
     def get_user_choice(self):
-        user_choice = input("Choose Rock, Paper or Scissors: \n")
-        if user_choice.lower().strip() in ["rock", "r"]:
+        user_choice = input(
+            "Choose Rock, Paper or Scissors: \n \t r: rock \n \t p: paper \n \t s: scissors \n").lower().strip()
+        if user_choice in ["rock", "r"]:
             self.user_choice = "r"
-        elif user_choice.lower().strip() in ["paper", "p"]:
+        elif user_choice in ["paper", "p"]:
             self.user_choice = "p"
-        elif user_choice.lower().strip() in ["scissors", "s"]:
+        elif user_choice in ["scissors", "s"]:
             self.user_choice = "s"
         else:
             print(
                 "Uh Oh, I don't think you've played this game before. Please try again.")
             self.get_user_choice
-        return user_choice
 
-    def computer_option(self):
-        comp_choice = random.randint(1, 3)
-        if comp_choice == 1:
-            comp_choice = "r"
-        elif comp_choice == 2:
-            comp_choice = "p"
+    def get_computer_option(self):
+        computer_option = random.randint(1, 3)
+        if computer_option == 1:
+            self.computer_option = "r"
+        elif computer_option == 2:
+            self.computer_option = "p"
         else:
-            comp_choice = "s"
-        return comp_choice
-    try:
-        while True:
-            # get user's username
-            # check if username exists in google spreadsheet
-            # if user exists say welcome back
-            # if new say welcome newbie
-            Start_Option()
-            user_choice = Choose_Option()
-            comp_choice = Computer_Option()
-            print("")
+            self.computer_option = "s"
 
-            if user_choice == "r":
-                if comp_choice == "r":
-                    print(
-                        "You chose rock. The computer chose rock too. Congrats, you tied.")
+    def display_match_results(self):
+        print("")
+        print("Player wins: " + str(self.player_wins))
+        print("Computer wins: " + str(self.comp_wins))
+        print("")
 
-                elif comp_choice == "p":
-                    print("You chose rock. The computer chose paper. Oh no, you lose.")
-                    comp_wins += 1
+    def who_won(self):
+        self.games_played += 1
+        if self.user_choice == "r":
+            if self.computer_option == "r":
+                print(
+                    "You chose rock. The computer chose rock too. Congrats, you tied.")
 
-                elif comp_choice == "s":
-                    print(
-                        "You chose rock. The computer chose scissors. Woo hoo!! You win!")
-                    player_wins += 1
+            elif self.computer_option == "p":
+                print("You chose rock. The computer chose paper. Oh no, you lose.")
+                self.comp_wins += 1
 
-            elif user_choice == "p":
+            elif self.computer_option == "s":
+                print(
+                    "You chose rock. The computer chose scissors. Woo hoo!! You win!")
+                self.player_wins += 1
 
-                if comp_choice == "r":
-                    print(
-                        "You chose paper. The computer chose rock. Woo hoo!! You win!.")
-                    player_wins += 1
+        elif self.user_choice == "p":
 
-                elif comp_choice == "p":
-                    print(
-                        "You chose paper. The computer chose paper too. Congrats, you tied.")
+            if self.computer_option == "r":
+                print(
+                    "You chose paper. The computer chose rock. Woo hoo!! You win!.")
+                self.player_wins += 1
 
-                elif comp_choice == "s":
-                    print(
-                        "You chose paper. The computer chose scissors. Oh no, you lose.")
-                    comp_wins += 1
+            elif self.computer_option == "p":
+                print(
+                    "You chose paper. The computer chose paper too. Congrats, you tied.")
 
-            elif user_choice == "s":
+            elif self.computer_option == "s":
+                print(
+                    "You chose paper. The computer chose scissors. Oh no, you lose.")
+                self.comp_wins += 1
 
-                if comp_choice == "r":
-                    print(
-                        "You chose scissors. The computer chose rock. Oh no, you lose.")
-                    comp_wins += 1
+        elif self.user_choice == "s":
 
-                elif comp_choice == "p":
-                    print(
-                        "You chose scissors. The computer chose paper. Woo hoo!! You win!.")
-                    player_wins += 1
+            if self.computer_option == "r":
+                print(
+                    "You chose scissors. The computer chose rock. Oh no, you lose.")
+                self.comp_wins += 1
 
-                elif comp_choice == "s":
-                    print(
-                        "You chose scissors. The computer chose scissors too. Congrats, you tied.")
+            elif self.computer_option == "p":
+                print(
+                    "You chose scissors. The computer chose paper. Woo hoo!! You win!.")
+                self.player_wins += 1
 
-            print("")
-            print("Player wins: " + str(player_wins))
-            print("Computer wins: " + str(comp_wins))
-            print("")
+            elif self.computer_option == "s":
+                print(
+                    "You chose scissors. The computer chose scissors too. Congrats, you tied.")
 
-            user_choice = input("Do you want to play again? (y/n)\n")
-            if user_choice.lower().strip() in ["y", "yes"]:
-                pass
-            elif user_choice.lower().strip() in ["n", "no"]:
-                # record user playing game (add 1 to spreadsheet) create function.
+    def new_round(self):
+        self.user_choice = None
+        self.computer_option = None
+        self.play()
 
-                print("")
-                print("Final Score")
-                print("Player wins: " + str(player_wins))
-                print("Computer wins: " + str(comp_wins))
-                print("")
-                break
-            else:
-                break
-    except:
-        print("\nGoodbye!")
-        # potentially add final score here
-        
+    def play_again(self):
+        user_choice = input(
+            "Do you want to play again? \n \t y: yes \n \t  n: no \n").lower().strip()
+        if user_choice in ["y", "yes"]:
+            self.new_round()
+        elif user_choice in ["n", "no"]:
+            # record user playing game (add 1 to spreadsheet) create function.
+
+            print("Goodbye! \n")
+            print("Final Score")
+            self.display_match_results()
+            return False
+        else:
+            print("invalid_input")
+            self.play_again()
+
+    def play(self):
+        self.get_user_choice()
+        self.get_computer_option()
+        self.who_won()
+        self.display_match_results()
+        self.play_again()
+
+
+def main():
+    print("Hello! What is your username?")
+    myName = input().strip()
+    print("Hello, " + myName)
+    game = Game(myName)
+    print("If this is your first time here, please check out our rules.")
+    while True:
+        user_choice = input(
+            "Type 'Start' To Begin or Type 'Help' For The Rules.\n \t s: start \n \t h: help\n").lower().strip()
+        if user_choice in ["help", "h"]:
+            return game.rules()
+
+            # View most addicted player
+        elif user_choice in ["start", "s", "y", "yes"]:
+            return game.play()
+        else:
+            print(
+                "Uh Oh, I don't think you've played this game before. Please try again.")
+
+
 # if __name__ == 'main':
 #     main()
 main()
