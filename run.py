@@ -18,14 +18,13 @@ data = usernames.get_all_values()
 
 
 class Game:
-    def __init__(self, myName):
-        if len(myName) > 0:
-            self.myName = myName
-        else:
+    def __init__(self, myName="Player 1", comp_wins=0, player_wins=0, games_played=0):  # noqa
+        self.myName = myName
+        if len(self.myName) < 1:
             self.myName = "Player 1"
-        self.comp_wins = 0
-        self.player_wins = 0
-        self.games_played = 0
+        self.comp_wins = comp_wins
+        self.player_wins = player_wins
+        self.games_played = games_played
         self.user_choice = None
         self.computer_option = None
 
@@ -132,7 +131,7 @@ class Game:
         elif user_choice in ["n", "no"]:
             # record user playing game (add 1 to spreadsheet) create function.
 
-            print("Goodbye! \n")
+            print("Goodbye!" + self.myName)
             print("Final Score")
             self.display_match_results()
             return False
@@ -151,8 +150,11 @@ class Game:
 def main():
     print("Hello! What is your username?")
     myName = input().strip()
-    print("Hello, " + myName)
+    # read spreadsheet to get username to see if they have data
+
+    # pass in wins loses and games played if valid data
     game = Game(myName)
+    print("Hello, " + game.myName)
     print("If this is your first time here, please check out our rules.")
     while True:
         user_choice = input(
