@@ -12,7 +12,7 @@ Rock-Paper-Scissors is a simple rock, paper, scissors game. You can test yoursel
 
 ### Flow Chart 
 
-![FlowChart]((https://github.com/KateEllen/rock-paper-scissors/blob/main/assets/images/documentation/flowchart.png))
+![FlowChart](https://github.com/KateEllen/rock-paper-scissors/blob/main/assets/images/documentation/flowchart-screenshot.png)
 
 ## How To Play
 - This game is simply played by choosing rock, paper or scissors. The computer will then pick a random choice.
@@ -74,15 +74,34 @@ Rock-Paper-Scissors is a simple rock, paper, scissors game. You can test yoursel
 - When I first put my code through PEP8, i got a few errors. 
 ![Validation Errors](https://github.com/KateEllen/rock-paper-scissors/blob/main/assets/images/documentation/validation-errors.png)
 
-- I used ' # noqa' to overried the lines being too long to maintain the readability of the code. 
+- I used ' # noqa' to overried the lines being too long to maintain the readability of the code. I also had to manually fix some whitespace errors. 
 ![No Errors](https://github.com/KateEllen/rock-paper-scissors/blob/main/assets/images/documentation/terminal-screenshot.png)
 ## Defects 
 
 I tracked defects in github. You can find them [here](https://github.com/KateEllen/Rock-Paper-Scissors/issues?q=is%3Aissue+is%3Aclosed)
 
 ## Deployments 
-- The site was deployed to Heroku. The steps to deploy are as follows: 
-  - 
+### Heroku 
+The site was deployed to Heroku. The steps to deploy are as follows: 
+  - First, you must log into Heroku and go into the settings tab. 
+  ![deployment-one](https://github.com/KateEllen/rock-paper-scissors/blob/main/assets/images/documentation/deployment-one.png)
+  - From here, you go to the Config Vars section. 
+  ![deployment-two](https://github.com/KateEllen/rock-paper-scissors/blob/main/assets/images/documentation/deployment-two.png)
+  - You then enter Key: PORT and Value: 8000. If you have a google sheet installed you will need to enter the data here too. 
+  ![deployment-three](https://github.com/KateEllen/rock-paper-scissors/blob/main/assets/images/documentation/deployment-three.png)
+  - You must then go to the buildpacks section. Here you add Python and Nodejs. The must be in the order of python on top, and Nodejs underneath. 
+  ![deployment-four](https://github.com/KateEllen/rock-paper-scissors/blob/main/assets/images/documentation/deployment-four.png)
+  - After finishing the above you will go to the 'Deploy' tab. 
+  ![deployment-five](https://github.com/KateEllen/rock-paper-scissors/blob/main/assets/images/documentation/deployment-five.png)
+  - You then connect to your Github account. 
+  ![deployment-six](https://github.com/KateEllen/rock-paper-scissors/blob/main/assets/images/documentation/deployment-six.png)
+  - Once you enter your repository name, your Github project will be connected to Heroku. 
+  ![deployment-seven](https://github.com/KateEllen/rock-paper-scissors/blob/main/assets/images/documentation/deployment-seven.png)
+  - From here you have two options to deploy. You can select the option to enable automatic deploys, so when you commit any changes will automatically deploy. 
+  ![deployment-eight](https://github.com/KateEllen/rock-paper-scissors/blob/main/assets/images/documentation/deployment-eight.png)
+  - The second option is to manually deploy, this is what I personally chose. When you click the 'Deploy' button, you will watch your files being uploaded. 
+  ![deployment-nine](https://github.com/KateEllen/rock-paper-scissors/blob/main/assets/images/documentation/deployment-nine.png)
+  -   Once this is complete, a sucess message will appear with a 'View' button that will bring you to the deployed project. 
 
 The live link can be found here - https://rock-paper-scissors-km.herokuapp.com/
 
