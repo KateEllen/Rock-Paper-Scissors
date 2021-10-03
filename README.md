@@ -44,6 +44,28 @@ Rock-Paper-Scissors is a simple rock, paper, scissors game. You can test yoursel
 - This feature would also show their wins and losses. 
 - Due to time restriction this could not be added to this version. 
 
+## Model / Class
+### Parameters 
+- self.myName = myName
+  if len(self.myName) < 1:
+  self.myName = "Player 1" = When user does not type there username it will default to Player 1.  
+- self.comp_wins = comp_wins = set computer wins
+- self.player_wins = player_wins = set player wins
+- self.games_played = games_played = set games played
+- self.user_choice = None = set user choice to none
+- self.computer_option = None = set computer choice to none
+
+### Methods: 
+- def rules = Shows the rules
+- def get_user_choice = Gets the user's inputted choice. 
+-  def get_computer_option = Generates the computer's choice. 
+- def display_match_results = Display's player wins and computer wins. 
+- def who_won = Generates user/ comp symbol when option is chosen. Also adds score and shows appropriate message for wins/ losses/ ties. 
+- def new_round = Calls functions to reset game and play again. 
+- def play_again = Gives user option to play another round, if no is picked then it display's a goodbye message and shows the final score. 
+- def play = Calls functions to get user and computer choice, get the match results and the play again function. 
+- def main = Collects username, and gives user option to see the rules or play the game. 
+
 ## Testing
 
 ### Validator Testing 
