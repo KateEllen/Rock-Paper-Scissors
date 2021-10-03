@@ -36,7 +36,7 @@ Rock-Paper-Scissors is a simple rock, paper, scissors game. You can test yoursel
 - Skip user name and default to PLAYER 1 if then don’t enter anything.
 
 #### Made User input consistent so user knows what is expect of them:
-- Output r: rock etc. 
+- Output r: rock. Output p: paper. Output s: scissors etc. 
 
 ### Future Features 
 #### Google sheets to collect usernames and show 'Most Addicted Players'
@@ -69,7 +69,13 @@ Rock-Paper-Scissors is a simple rock, paper, scissors game. You can test yoursel
 ## Testing
 
 ### Validator Testing 
+## PEP8 
 
+- When I first put my code through PEP8, i got a few errors. 
+![Validation Errors](https://github.com/KateEllen/rock-paper-scissors/blob/main/assets/images/documentation/validation-errors.png)
+
+- I used ' # noqa' to overried the lines being too long to maintain the readability of the code. 
+![No Errors](https://github.com/KateEllen/rock-paper-scissors/blob/main/assets/images/documentation/terminal-screenshot.png)
 ## Defects 
 
 I tracked defects in github. You can find them [here]()
