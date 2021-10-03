@@ -59,7 +59,7 @@ Rock-Paper-Scissors is a simple rock, paper, scissors game. You can test yoursel
 - def rules = Shows the rules
 - def get_user_choice = Gets the user's inputted choice. 
 -  def get_computer_option = Generates the computer's choice. 
-- def display_match_results = Display's player wins and computer wins. 
+- def display_match_results = Display's and adds player wins and computer wins. 
 - def who_won = Generates user/ comp symbol when option is chosen. Also adds score and shows appropriate message for wins/ losses/ ties. 
 - def new_round = Calls functions to reset game and play again. 
 - def play_again = Gives user option to play another round, if no is picked then it display's a goodbye message and shows the final score. 
@@ -67,7 +67,9 @@ Rock-Paper-Scissors is a simple rock, paper, scissors game. You can test yoursel
 - def main = Collects username, and gives user option to see the rules or play the game. 
 
 ## Testing
-
+- Manual Testing was documented in github using a custom issue template. 
+Here is my [Test Case Template](https://github.com/KateEllen/Rock-Paper-Scissors/issues/2)
+Here is my [Test Case Project Board](https://github.com/KateEllen/Rock-Paper-Scissors/projects/1?add_cards_query=is%3Aopen)
 ### Validator Testing 
 ## PEP8 
 
@@ -115,6 +117,10 @@ The live link can be found here - https://rock-paper-scissors-km.herokuapp.com/
 ### Credits 
 
 #### Code
+- My original code was inspired from this video. [Youtube Video](https://www.youtube.com/watch?v=-JACmC8kabo)
+- I learned how to use the class in python using this article. [Class atricle](https://www.scraggo.com/python-classes-guess-the-number/)
+- [Code Institute Template ](https://github.com/Code-Institute-Org/python-essentials-template)- The Template for the GUI for this project was provided by Code Institute. This allows for the Command line to be shown and used within the browser.
+
 
  
 ## Acknowledgments
