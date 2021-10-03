@@ -1,53 +1,36 @@
-from google.oauth2.service_account import Credentials
-import gspread
 import random
 import colorama
 from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
 
-
-SCOPE = [
-    "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive.file",
-    "https://www.googleapis.com/auth/drive"
-]
-
-CREDS = Credentials.from_service_account_file('creds.json')
-SCOPED_CREDS = CREDS.with_scopes(SCOPE)
-GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('rock_paper_scissors')
 PAPER = [
-   Fore.YELLOW + "PPPPPPPPPPPPPPPP" + Fore.WHITE,
-   Fore.YELLOW + "PPPPPPPPPPPPPPPP" + Fore.WHITE,
-   Fore.YELLOW + "PPPPPPPPPPPPPPPP" + Fore.WHITE,
-   Fore.YELLOW + "PPPPPPPPPPPPPPPP" + Fore.WHITE,
-   Fore.YELLOW + "PPPPPPPPPPPPPPPP" + Fore.WHITE,
-   Fore.YELLOW + "PPPPPPPPPPPPPPPP" + Fore.WHITE,
-   Fore.YELLOW + "PPPPPPPPPPPPPPPP" + Fore.WHITE
+    Fore.YELLOW + "PPPPPPPPPPPPPPPP" + Fore.WHITE,
+    Fore.YELLOW + "PPPPPPPPPPPPPPPP" + Fore.WHITE,
+    Fore.YELLOW + "PPPPPPPPPPPPPPPP" + Fore.WHITE,
+    Fore.YELLOW + "PPPPPPPPPPPPPPPP" + Fore.WHITE,
+    Fore.YELLOW + "PPPPPPPPPPPPPPPP" + Fore.WHITE,
+    Fore.YELLOW + "PPPPPPPPPPPPPPPP" + Fore.WHITE,
+    Fore.YELLOW + "PPPPPPPPPPPPPPPP" + Fore.WHITE
 ]
 
 ROCK = [
-   Fore.MAGENTA + "  RRRRR         " + Fore.WHITE,
-   Fore.MAGENTA + "RRRRRRRRRR      " + Fore.WHITE,
-   Fore.MAGENTA + "RRRRRRRRRRRRR   " + Fore.WHITE,
-   Fore.MAGENTA + "RRRRRRRRRRRRR   " + Fore.WHITE,
-   Fore.MAGENTA + "RRRRRRRRRRR     " + Fore.WHITE,
-   Fore.MAGENTA + "RRRRRRRRRR      " + Fore.WHITE,
-   Fore.MAGENTA + " RRRRRR         " + Fore.WHITE
+    Fore.MAGENTA + "  RRRRR         " + Fore.WHITE,
+    Fore.MAGENTA + "RRRRRRRRRR      " + Fore.WHITE,
+    Fore.MAGENTA + "RRRRRRRRRRRRR   " + Fore.WHITE,
+    Fore.MAGENTA + "RRRRRRRRRRRRR   " + Fore.WHITE,
+    Fore.MAGENTA + "RRRRRRRRRRR     " + Fore.WHITE,
+    Fore.MAGENTA + "RRRRRRRRRR      " + Fore.WHITE,
+    Fore.MAGENTA + " RRRRRR         " + Fore.WHITE
 ]
 SCISSORS = [
-   Fore.CYAN + " S          s" + Fore.WHITE,
-   Fore.CYAN + "S  S     s   " + Fore.WHITE,
-   Fore.CYAN + "  S   s      " + Fore.WHITE,
-   Fore.CYAN + "    s        " + Fore.WHITE,
-   Fore.CYAN + "  S   s      " + Fore.WHITE,
-   Fore.CYAN + "S  S     s   " + Fore.WHITE,
-   Fore.CYAN + " S          s" + Fore.WHITE
+    Fore.CYAN + " S          s" + Fore.WHITE,
+    Fore.CYAN + "S  S     s   " + Fore.WHITE,
+    Fore.CYAN + "  S   s      " + Fore.WHITE,
+    Fore.CYAN + "    s        " + Fore.WHITE,
+    Fore.CYAN + "  S   s      " + Fore.WHITE,
+    Fore.CYAN + "S  S     s   " + Fore.WHITE,
+    Fore.CYAN + " S          s" + Fore.WHITE
 ]
-
-
-usernames = SHEET.worksheet('usernames')
-data = usernames.get_all_values()
 
 
 class Game:
