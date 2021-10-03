@@ -78,7 +78,7 @@ Rock-Paper-Scissors is a simple rock, paper, scissors game. You can test yoursel
 ![No Errors](https://github.com/KateEllen/rock-paper-scissors/blob/main/assets/images/documentation/terminal-screenshot.png)
 ## Defects 
 
-I tracked defects in github. You can find them [here]()
+I tracked defects in github. You can find them [here](https://github.com/KateEllen/Rock-Paper-Scissors/issues?q=is%3Aissue+is%3Aclosed)
 
 ## Deployments 
 - The site was deployed to Heroku. The steps to deploy are as follows: 
