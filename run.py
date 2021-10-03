@@ -16,6 +16,35 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('rock_paper_scissors')
+PAPER = [
+   Fore.YELLOW + "PPPPPPPPPPPPPPPP" + Fore.WHITE,
+   Fore.YELLOW + "PPPPPPPPPPPPPPPP" + Fore.WHITE,
+   Fore.YELLOW + "PPPPPPPPPPPPPPPP" + Fore.WHITE,
+   Fore.YELLOW + "PPPPPPPPPPPPPPPP" + Fore.WHITE,
+   Fore.YELLOW + "PPPPPPPPPPPPPPPP" + Fore.WHITE,
+   Fore.YELLOW + "PPPPPPPPPPPPPPPP" + Fore.WHITE,
+   Fore.YELLOW + "PPPPPPPPPPPPPPPP" + Fore.WHITE
+]
+
+ROCK = [
+   Fore.MAGENTA + "  RRRRR         " + Fore.WHITE,
+   Fore.MAGENTA + "RRRRRRRRRR      " + Fore.WHITE,
+   Fore.MAGENTA + "RRRRRRRRRRRRR   " + Fore.WHITE,
+   Fore.MAGENTA + "RRRRRRRRRRRRR   " + Fore.WHITE,
+   Fore.MAGENTA + "RRRRRRRRRRR     " + Fore.WHITE,
+   Fore.MAGENTA + "RRRRRRRRRR      " + Fore.WHITE,
+   Fore.MAGENTA + " RRRRRR         " + Fore.WHITE
+]
+SCISSORS = [
+   Fore.CYAN + " S          s" + Fore.WHITE,
+   Fore.CYAN + "S  S     s   " + Fore.WHITE,
+   Fore.CYAN + "  S   s      " + Fore.WHITE,
+   Fore.CYAN + "    s        " + Fore.WHITE,
+   Fore.CYAN + "  S   s      " + Fore.WHITE,
+   Fore.CYAN + "S  S     s   " + Fore.WHITE,
+   Fore.CYAN + " S          s" + Fore.WHITE
+]
+
 
 usernames = SHEET.worksheet('usernames')
 data = usernames.get_all_values()
@@ -75,6 +104,20 @@ class Game:
         print("")
 
     def who_won(self):
+        print("COMPUTER             " + self.myName.upper())
+        comp_symbol = ROCK
+        if self.computer_option == "p":
+            comp_symbol = PAPER
+        elif self.computer_option == "s":
+            comp_symbol = SCISSORS
+        user_symbol = ROCK
+        if self.user_choice == "p":
+            user_symbol = PAPER
+        elif self.user_choice == "s":
+            user_symbol = SCISSORS
+        for num, line in enumerate(comp_symbol):
+            print(line + "    " + user_symbol[num])
+
         self.games_played += 1
         if self.user_choice == "r":
             if self.computer_option == "r":
