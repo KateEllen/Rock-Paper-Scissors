@@ -116,11 +116,12 @@ The live link can be found here - https://rock-paper-scissors-km.herokuapp.com/
 
 ### Credits 
 
-#### Code
+#### Media
+- I made the flow chart using this. [Flow Chart](https://app.diagrams.net/)
+
+## Acknowledgments
+- My mentor Malia, as always, helped me throught this project. She helped me push this project above and beyond. 
 - My original code was inspired from this video. [Youtube Video](https://www.youtube.com/watch?v=-JACmC8kabo)
 - I learned how to use the class in python using this article. [Class atricle](https://www.scraggo.com/python-classes-guess-the-number/)
 - [Code Institute Template ](https://github.com/Code-Institute-Org/python-essentials-template)- The Template for the GUI for this project was provided by Code Institute. This allows for the Command line to be shown and used within the browser.
-
-
- 
-## Acknowledgments
+- The colorama website helped to show me how to use it correctly [colorama](https://pypi.org/project/colorama/)
