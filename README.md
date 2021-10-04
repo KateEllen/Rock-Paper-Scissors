@@ -27,7 +27,7 @@ Rock-Paper-Scissors is a simple rock, paper, scissors game. You can test yoursel
 
 #### Score tracker
 - Allows users to see how many games they have won vs the computer. 
-![Score Tracker]()
+![Score Tracker](https://github.com/KateEllen/rock-paper-scissors/blob/main/assets/images/documentation/score-tracker.png)
 
 #### Made user input easier by:
 - Case insensitivity can enter r, R or Rock etc. 
