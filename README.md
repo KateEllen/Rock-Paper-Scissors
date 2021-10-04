@@ -35,6 +35,11 @@ Rock-Paper-Scissors is a simple rock, paper, scissors game. You can test yoursel
 - Users don't have to type entire letters for Yes No validation, but keeping it simple.
 - Skip user name and default to PLAYER 1 if then don’t enter anything.
 
+#### Pixalated images to represent Rock, Paper and Scissors
+- Pixalated images display to show user what they have chosen. 
+![Score Tracker](https://github.com/KateEllen/rock-paper-scissors/blob/main/assets/images/documentation/rock-paper.png)
+![Score Tracker](https://github.com/KateEllen/rock-paper-scissors/blob/main/assets/images/documentation/rock-scissors.png)
+
 #### Made User input consistent so user knows what is expect of them:
 - Output r: rock. Output p: paper. Output s: scissors etc. 
 
