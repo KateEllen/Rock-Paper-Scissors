@@ -73,8 +73,8 @@ Rock-Paper-Scissors is a simple rock, paper, scissors game. You can test yoursel
 
 ## Testing
 - Manual Testing was documented in github using a custom issue template. 
-Here is my [Test Case Template](https://github.com/KateEllen/Rock-Paper-Scissors/issues/2)
-Here is my [Test Case Project Board](https://github.com/KateEllen/Rock-Paper-Scissors/projects/1?add_cards_query=is%3Aopen)
+Here are my [Test Case Templates](https://github.com/KateEllen/Rock-Paper-Scissors/issues?q=is%3Aissue+is%3Aclosed)
+
 ### Validator Testing 
 ## PEP8 
 
@@ -85,7 +85,7 @@ Here is my [Test Case Project Board](https://github.com/KateEllen/Rock-Paper-Sci
 ![No Errors](https://github.com/KateEllen/rock-paper-scissors/blob/main/assets/images/documentation/terminal-screenshot.png)
 ## Defects 
 
-I tracked defects in github. You can find them [here](https://github.com/KateEllen/Rock-Paper-Scissors/issues?q=is%3Aissue+is%3Aclosed)
+I tracked defects in github. You can find them [here](https://github.com/KateEllen/Rock-Paper-Scissors/issues/1)
 
 ## Deployments 
 ### Heroku 
